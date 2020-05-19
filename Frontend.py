@@ -1,3 +1,18 @@
+"""
+Title : GST Yearly Integrator
+
+Team WIZARDSs
+Group Info
+
+   Name 				   Roll no.
+1. Prathmesh Patil			A45
+2. Kshitij Sangar			A52
+3. Ruturaj Sankpal			A54
+4. Shailesh Mohite			A55
+
+"""
+
+
 import eel
 import tkinter as tk
 from tkinter import filedialog, Tk
@@ -5,7 +20,6 @@ import os
 import time
 import Backend
 
-l = ['Full_demo.xlsx', 'April_demo.xlsx']
 
 eel.init('static')
 Final_filename = 'NONE'
@@ -26,7 +40,7 @@ def browsefolder():
 
 def fileOpen():
     root = tk.Tk()
-    root.withdraw()
+    #root.withdraw()
     filename = filedialog.askopenfilename(initialdir= Final_foldername + '/', title="Select File", filetypes=(
         ("Excel files", "*.xlsx"), ("Image file", "*.jpg"), ("Image file", "*.jpeg"), ("Image file", "*.png"),
         ("all files", "*.*")))
@@ -34,7 +48,7 @@ def fileOpen():
 
 def folderOpen():
     root = tk.Tk()
-    root.withdraw()
+    #root.withdraw()
     foldername = filedialog.askdirectory(title="Select Folder")
     return str(foldername)
 

@@ -8,6 +8,8 @@ import xlsxwriter
 
 def backend(folderloc, mainfile):
     lst = os.listdir(folderloc)
+    print('\n\n\n\n')
+    print(lst)
     desktop = os.path.expanduser("~/Desktop")
     fmain = pd.ExcelFile(mainfile)  # Highlight
     for s in fmain.sheet_names:   # Traversing the sheets of the main file
@@ -21,7 +23,7 @@ def backend(folderloc, mainfile):
         df_main.insert(len(df_main.columns), "TOTAL", df_main.shape[0] * [0])
 
         for file in lst:  # Traversing all the files except the main file.
-            if (folderloc + "/" +  str(file)) != mainfile:
+            if (folderloc + "/" + str(file)) != mainfile:
                 f = pd.ExcelFile(folderloc + "/" +  str(file)) # Highlight
                 for sheet in f.sheet_names:
                     df = f.parse(sheet)
